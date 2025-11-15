@@ -51,4 +51,5 @@ else
 fi
 
 sudo apt install screen
+sudo apt install openssh-server
 sudo snap install ngrok
