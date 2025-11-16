@@ -32,10 +32,11 @@ Description=My custom startup script
 After=network.target
 
 [Service]
-ExecStart=/home/mcserver/startup_run.sh
 User=mcserver
-Environment=TERM=xterm
 Type=simple
+Environment=TERM=xterm
+PAMName=login
+ExecStart=/home/mcserver/startup_run.sh
 
 [Install]
 WantedBy=multi-user.target
