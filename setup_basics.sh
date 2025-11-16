@@ -26,6 +26,11 @@ sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/config.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/mods.sh
 sudo chmod +x mods.sh
 sudo chmod +x config.sh
+sudo chown -R mcserver:mcserver /home/mcserver/start_server.sh
+sudo chown -R mcserver:mcserver /home/mcserver/stop_server.sh
+sudo chown -R mcserver:mcserver /home/mcserver/mods.sh
+sudo chown -R mcserver:mcserver /home/mcserver/config.sh
+sudo chown -R mcserver:mcserver /home/mcserver/serverfiles
 sudo bash -c 'cat <<EOF > /etc/systemd/system/myscript.service
 [Unit]
 Description=My custom startup script
@@ -63,3 +68,7 @@ sudo apt install screen
 sudo apt install openssh-server
 sudo snap install ngrok
 sudo apt upgrade
+sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/set_stuff.sh
+sudo chmod +x set_stuff.sh
+sudo chown -R mcserver:mcserver /home/mcserver/set_stuff.sh
+sudo ./set_stuff.sh
