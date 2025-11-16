@@ -74,3 +74,5 @@ sudo chown -R mcserver:mcserver /home/mcserver/set_stuff.sh
 sudo ./set_stuff.sh
 sudo ./config.sh
 sudo ./mods.sh
+sudo timedatectl set-timezone America/New_York
+sudo timedatectl set-ntp yes
