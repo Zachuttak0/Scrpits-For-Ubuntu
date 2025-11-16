@@ -32,7 +32,7 @@ After=network.target
 
 [Service]
 ExecStart=/home/mcserver/startup_run.sh
-User=root
+User=mcserver
 Type=simple
 
 [Install]
@@ -40,20 +40,20 @@ WantedBy=multi-user.target
 EOF'
 sudo systemctl enable myscript.service
 
-( crontab -l 2>/dev/null | grep -F "0 12 * * * /home/mcserver/start_server.sh" ) >/dev/null
+sudo -u mcserver crontab -l 2>/dev/null | grep -F "0 12 * * * /home/mcserver/start_server.sh" >/dev/null
 if [ $? -ne 0 ]; then
-    ( crontab -l 2>/dev/null; echo "0 12 * * * /home/mcserver/start_server.sh" ) | crontab -
-    echo "Cron job installed."
+    ( sudo -u mcserver crontab -l 2>/dev/null; echo "0 12 * * * /home/mcserver/start_server.sh" ) | sudo -u mcserver crontab -
+    echo "Cron job installed for user mcserver."
 else
-    echo "Cron job already exists."
+    echo "Cron job already exists for user mcserver."
 fi
 
-( crontab -l 2>/dev/null | grep -F "0 0 * * * /home/mcserver/stop_server.sh" ) >/dev/null
+sudo -u mcserver crontab -l 2>/dev/null | grep -F "0 0 * * * /home/mcserver/stop_server.sh" >/dev/null
 if [ $? -ne 0 ]; then
-    ( crontab -l 2>/dev/null; echo "0 0 * * * /home/mcserver/stop_server.sh" ) | crontab -
-    echo "Cron job installed."
+    ( sudo -u mcserver crontab -l 2>/dev/null; echo "0 0 * * * /home/mcserver/stop_server.sh" ) | sudo -u mcserver crontab -
+    echo "Cron job installed for user mcserver."
 else
-    echo "Cron job already exists."
+    echo "Cron job already exists for user mcserver."
 fi
 
 sudo apt install screen
