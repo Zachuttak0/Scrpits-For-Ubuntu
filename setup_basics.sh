@@ -72,3 +72,5 @@ sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/set_stuff
 sudo chmod +x set_stuff.sh
 sudo chown -R mcserver:mcserver /home/mcserver/set_stuff.sh
 sudo ./set_stuff.sh
+sudo ./config.sh
+sudo ./mods.sh
