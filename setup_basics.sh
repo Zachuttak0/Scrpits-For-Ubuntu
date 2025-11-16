@@ -8,14 +8,6 @@ sudo ufw allow 25565/tcp
 sudo ufw enable
 sudo apt-get install openjdk-17-jdk
 mkdir serverfiles
-cd serverfiles
-sudo wget maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.0/forge-1.20.1-47.4.0-installer.jar
-sudo java -jar forge-1.20.1-47.4.0-installer.jar --installServer
-echo "\n-Xmx12G" >> user_jvm_args.txt
-echo "eula=true" > eula.txt
-mkdir mods
-mkdir config
-cd ..
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/start_server.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/startup_run.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/stop_server.sh
@@ -30,6 +22,10 @@ sudo chown -R mcserver:mcserver /home/mcserver/start_server.sh
 sudo chown -R mcserver:mcserver /home/mcserver/stop_server.sh
 sudo chown -R mcserver:mcserver /home/mcserver/mods.sh
 sudo chown -R mcserver:mcserver /home/mcserver/config.sh
+sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/mc_setup.sh
+sudo chmod +x mc_setup.sh
+sudo chown -R mcserver:mcserver /home/mcserver/mc_setup.sh
+sudo ./mc_setup.sh
 sudo chown -R mcserver:mcserver /home/mcserver/serverfiles
 sudo bash -c 'cat <<EOF > /etc/systemd/system/myscript.service
 [Unit]
@@ -72,7 +68,5 @@ sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/set_stuff
 sudo chmod +x set_stuff.sh
 sudo chown -R mcserver:mcserver /home/mcserver/set_stuff.sh
 sudo ./set_stuff.sh
-sudo ./config.sh
-sudo ./mods.sh
 sudo timedatectl set-timezone America/New_York
 sudo timedatectl set-ntp yes
