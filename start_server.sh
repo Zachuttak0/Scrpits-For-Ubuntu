@@ -1,3 +1,2 @@
 #!/bin/bash
-screen -mdS MCRunner
-screen -S MCRunner -X stuff 'cd /home/mcserver/serverfiles/ && ./run.sh^M'
+screen -mdS MCRunner bash -c "cd /home/mcserver/serverfiles/ && ./run.sh"
