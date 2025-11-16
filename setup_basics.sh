@@ -8,10 +8,12 @@ sudo ufw allow 25565/tcp
 sudo ufw enable
 sudo apt-get install openjdk-17-jdk
 mkdir serverfiles
+sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/del_world.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/start_server.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/startup_run.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/stop_server.sh
 sudo chmod +x startup_run.sh
+sudo chmod +x del_world.sh
 sudo chmod +x start_server.sh
 sudo chmod +x stop_server.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/config.sh
@@ -22,6 +24,7 @@ sudo chown -R mcserver:mcserver /home/mcserver/start_server.sh
 sudo chown -R mcserver:mcserver /home/mcserver/stop_server.sh
 sudo chown -R mcserver:mcserver /home/mcserver/mods.sh
 sudo chown -R mcserver:mcserver /home/mcserver/config.sh
+sudo chown -R mcserver:mcserver /home/mcserver/del_world.sh
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/mc_setup.sh
 sudo chmod +x mc_setup.sh
 sudo chown -R mcserver:mcserver /home/mcserver/mc_setup.sh
