@@ -1,4 +1,5 @@
 #!/bin/bash
+exit 0
 SCREEN=/usr/bin/screen
 BASH=/bin/bash
 SERVER_DIR=/home/mcserver/serverfiles

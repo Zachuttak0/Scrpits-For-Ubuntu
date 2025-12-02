@@ -5,6 +5,8 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow ssh
 sudo ufw allow 25565/tcp
+sudo utw allow http
+sudo utw allow https
 sudo ufw enable
 sudo apt-get install openjdk-17-jdk
 mkdir serverfiles
@@ -65,7 +67,8 @@ fi
 
 sudo apt install screen
 sudo apt install openssh-server
-sudo snap install ngrok
+curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up --auth-key=tskey-auth-kgnpmeWEup11CNTRL-uwBgYmJvrjN7e4dZuuVDjNHhNAJMdiYZ3
+sudo tailscale set --operator=mcserver
 sudo apt upgrade
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/set_stuff.sh
 sudo chmod +x set_stuff.sh
