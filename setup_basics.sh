@@ -3,7 +3,6 @@ sudo apt update
 sudo apt install ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-
 sudo ufw allow from 10.151.8.51
 sudo ufw enable
 sudo apt-get install openjdk-17-jdk
