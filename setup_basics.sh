@@ -3,10 +3,8 @@ sudo apt update
 sudo apt install ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-sudo ufw allow ssh
-sudo ufw allow 25565/tcp
-sudo utw allow http
-sudo utw allow https
+
+sudo ufw allow from 10.151.8.51
 sudo ufw enable
 sudo apt-get install openjdk-17-jdk
 mkdir serverfiles
