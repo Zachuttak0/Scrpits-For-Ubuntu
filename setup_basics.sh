@@ -73,3 +73,4 @@ sudo chown -R mcserver:mcserver /home/mcserver/set_stuff.sh
 sudo ./set_stuff.sh
 sudo timedatectl set-timezone America/New_York
 sudo timedatectl set-ntp yes
+pip install --break-system-packages alpaca-py pandas numpy yfinance Flask requests python-dateutil
