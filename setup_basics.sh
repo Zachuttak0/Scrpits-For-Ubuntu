@@ -64,7 +64,7 @@ fi
 
 sudo apt install screen
 sudo apt install openssh-server
-curl -fsSL https://tailscale.com/install.sh | sh && sudo tailscale up --auth-key=tskey-auth-k4Wh27pCxk11CNTRL-CSyvYh8vbvFAXYAbkk8tuFWmgwxwz53x
+curl -fsSL https://tailscale.com/install.sh
 sudo tailscale set --operator=mcserver
 sudo apt upgrade
 sudo wget raw.githubusercontent.com/Zachuttak0/Scrpits-For-Ubuntu/main/set_stuff.sh
